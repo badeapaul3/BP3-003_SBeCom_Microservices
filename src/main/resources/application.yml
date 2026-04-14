@@ -17,3 +17,21 @@ spring:
 
 server:
   port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always #or use when-authorized if needed
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: MyNewApp
+    description: MyNewApp
+    version: 1.0.0
