@@ -17,13 +17,16 @@ spring:
 
 server:
   port: 8082
+  shutdown: graceful
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*" #or specific ones like: beans, health, info, metrics
   endpoint:
+    shutdown:
+      enabled: true
     health:
       show-details: always #or use when-authorized if needed
   info:
@@ -35,3 +38,4 @@ info:
     name: MyNewApp
     description: MyNewApp
     version: 1.0.0
+
